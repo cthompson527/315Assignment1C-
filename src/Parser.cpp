@@ -20,6 +20,8 @@ std::vector<Team> Parser::create_teams() {
     std::string input;
     while (!file.eof()) {         // TODO: eof isn't set until +1 of desired eof. *Creates 33 teams*
         teams.push_back(create_team());
+        std::string clear;
+        std::getline(file, clear);
     }
     return teams;
 }
