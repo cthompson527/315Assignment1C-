@@ -1,18 +1,34 @@
 #include "Team.h"
 
-std::string Team::getName() const {
+/**
+ * Returns the team's name
+ */
+std::string Team::getName() const
+{
     return name;
 }
 
-int Team::getASM() const {
+/**
+ * returns the actual scoring margin of the team
+ */
+int Team::getASM() const
+{
     return _asm;
 }
 
-double Team::getPSM() const {
+/**
+ * Returns the predicted scoring margin of the team
+ */
+double Team::getPSM() const
+{
     return _psm;
 }
 
-Team::Team(std::string n, int _a, double _py, double _dpy, double _ry, double _dry, int _t, int _dt, int _pen, int _ret) {
+/**
+ * Constructor. Sets up all the stats
+ */
+Team::Team(std::string n, int _a, double _py, double _dpy, double _ry, double _dry, int _t, int _dt, int _pen, int _ret)
+{
     name = n;
     _asm = _a;
     _to = _t;
@@ -26,7 +42,11 @@ Team::Team(std::string n, int _a, double _py, double _dpy, double _ry, double _d
     _psm = 3.17 * _rettd - 0.06 * _pendif + 61.67 * _pya + 26.44 * _rya - 2.77 * _to - 67.5 * _dpya - 22.79 * _drya + 3.49 * _dto;
 }
 
-Team::~Team() {
+/**
+ * Default destructor
+ */
+Team::~Team()
+{
 
 }
 
